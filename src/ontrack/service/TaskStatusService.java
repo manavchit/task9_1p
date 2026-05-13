@@ -5,7 +5,7 @@ public class TaskStatusService {
     public String checkStatus(String studentId, String taskId) {
 
         if (studentId == null || taskId == null || studentId.isEmpty() || taskId.isEmpty()) {
-            return "Invalid Input"
+            return "Invalid Input";
         }
 
         if (studentId.equals("S123") && taskId.equals("9.1P")) {

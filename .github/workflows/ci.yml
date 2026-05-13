@@ -1,0 +1,27 @@
+name: Java CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Compile Java files
+      run: |
+        mkdir -p bin
+        javac -d bin src/ontrack/service/TaskStatusService.java
+
+    - name: Build completed
+      run: echo "Build successful"
